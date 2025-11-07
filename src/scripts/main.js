@@ -4,12 +4,11 @@ const wall = document.querySelector('.wall');
 const spider = document.querySelector('.spider');
 const spiderWidth = spider.offsetWidth;
 const spiderHeight = spider.offsetHeight;
-const borderOffset = (wall.offsetWidth - wall.clientWidth) / 2;
 
 document.addEventListener('click', (e) => {
   const wallRect = wall.getBoundingClientRect();
-  let targetX = e.clientX - wallRect.left - borderOffset - spiderWidth / 2;
-  let targetY = e.clientY - wallRect.top - borderOffset - spiderHeight / 2;
+  let targetX = e.clientX - wallRect.left - wall.clientLeft - spiderWidth / 2;
+  let targetY = e.clientY - wallRect.top - wall.clientTop - spiderHeight / 2;
 
   const isClickInsideWall =
     e.clientX >= wallRect.left &&
