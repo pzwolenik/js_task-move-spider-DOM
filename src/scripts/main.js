@@ -10,16 +10,6 @@ document.addEventListener('click', (e) => {
   let targetX = e.clientX - wallRect.left - wall.clientLeft - spiderWidth / 2;
   let targetY = e.clientY - wallRect.top - wall.clientTop - spiderHeight / 2;
 
-  const isClickInsideWall =
-    e.clientX >= wallRect.left &&
-    e.clientX <= wallRect.right &&
-    e.clientY >= wallRect.top &&
-    e.clientY <= wallRect.bottom;
-
-  if (!isClickInsideWall) {
-    return;
-  }
-
   const maxX = wall.clientWidth - spiderWidth;
   const maxY = wall.clientHeight - spiderHeight;
 
